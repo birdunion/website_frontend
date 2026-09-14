@@ -7,10 +7,10 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const active = "text-gray-200 font-semibold";
-  const base = "transition hover:text-gray-300";
+  const base = "transition hover:text-gray-400";
 
   return (
-    <nav className="bg-red-800 border-b border-gray-600 shadow-md top-0 z-50">
+    <nav className="bg-red-800 dark:bg-red-950 border-b border-gray-600 shadow-md top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <NavLink
           to="/"
@@ -44,13 +44,6 @@ const Navbar = () => {
             >
               Blog
             </NavLink>
-            <NavLink
-              className={(isActive) => (isActive ? active : base)}
-              to="/organizing"
-              onClick={() => setMenuOpen(false)}
-            >
-              Organizing Committee
-            </NavLink>
           </div>
         </div>
 
@@ -66,7 +59,7 @@ const Navbar = () => {
 
         {/* Mobile Nav */}
         {menuOpen && (
-          <div className="md:hidden flex flex-row bg-red-800 border-t border-b border-gray-500 px-6 py-4 space-y-2 space-x-4 text-center">
+          <div className="md:hidden flex flex-row bg-red-800 dark:bg-red-950 border-t border-b border-gray-500 px-6 py-4 space-y-2 space-x-4 text-center">
             <NavLink
               className={(isActive) => (isActive ? active : base)}
               to="/"
