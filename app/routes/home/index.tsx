@@ -3,6 +3,7 @@ import type { Post } from "~/types";
 import type { StrapiResponse, StrapiBlog } from "~/types";
 
 import FeaturedPosts from "~/components/FeaturedPosts";
+import Hero from "~/components/Hero";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -40,6 +41,7 @@ const Home = ({ loaderData }: Route.ComponentProps) => {
 
   return (
     <>
+      <Hero />
       <FeaturedPosts posts={posts} limit={4} />
     </>
   );

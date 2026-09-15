@@ -44,6 +44,13 @@ const Navbar = () => {
             >
               Blog
             </NavLink>
+            <NavLink
+              className={(isActive) => (isActive ? active : base)}
+              to="/contact"
+              onClick={() => setMenuOpen(false)}
+            >
+              Contact
+            </NavLink>
           </div>
         </div>
 
@@ -83,10 +90,10 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               className={(isActive) => (isActive ? active : base)}
-              to="/organizing"
+              to="/contact"
               onClick={() => setMenuOpen(false)}
             >
-              Organizing Committee
+              Contact
             </NavLink>
           </div>
         )}
