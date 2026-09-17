@@ -14,7 +14,7 @@ export function meta({ }: Route.MetaArgs) {
 }
 
 export async function loader({ request }: Route.LoaderArgs): Promise<{ faqs: Faq[] }> {
-  const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || 'https://api.bird-union.org';
+  const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || 'https://login.bird-union.org';
   const FAQ_URL = `${STRAPI_URL.replace(/\/$/, '')}/api/faqs`;
   const res = await fetch(FAQ_URL);
 
