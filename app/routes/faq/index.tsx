@@ -14,7 +14,7 @@ export function meta({ }: Route.MetaArgs) {
 }
 
 export async function loader({ request }: Route.LoaderArgs): Promise<{ faqs: Faq[] }> {
-  const res = await fetch(`${import.meta.env.VITE_API_URL}/faqs`);
+  const res = await fetch(`${import.meta.env.VITE_STRAPI_URL}/faqs`);
 
   if (!res.ok) throw new Error("Failed to fetch data");
 
