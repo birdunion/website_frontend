@@ -14,8 +14,9 @@ export function meta({ }: Route.MetaArgs) {
 }
 
 export async function loader({ request }: Route.LoaderArgs): Promise<{ faqs: Faq[] }> {
-  const STRAPI_URL = import.meta.env.VITE_STRAPI_URL;
-  const res = await fetch(`${STRAPI_URL}/faqs`);
+  const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || 'https://website-backend-c20g.onrender.com';
+  const FAQ_URL = `${STRAPI_URL.replace(/\/$/, '')}/api/faqs`;
+  const res = await fetch(FAQ_URL);
 
   if (!res.ok) throw new Error("Failed to fetch data");
 
