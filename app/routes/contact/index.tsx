@@ -6,7 +6,10 @@ const ContactPage = () => {
         <p className="text-2xl text-gray-900 font-semibold mb-8">To contact the Bird Union feel free to email us at <a
           target="_blank"
           rel="noopener noreferrer"
-          href="mailto:birdunion@gmail.com?subject=Help%20From%20Website">birdunion@gmail.com</a></p>
+          href="mailto:audubonforall@gmail.com?subject=Bird%20Union%20Help">audubonforall@gmail.com</a> and issues with the website to <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="mailto:birdunionorg@proton.me?subject=Help%20With%20The%20Website">birdunionorg@proton.me</a></p>
       </div>
     </>
   )
