@@ -15,7 +15,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export async function loader({ request }: Route.LoaderArgs): Promise<{ posts: Post[] }> {
-  const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || 'https://website-backend-c20g.onrender.com';
+  const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || 'https://api.bird-union.org';
   const BLOG_URL = `${STRAPI_URL.replace(/\/$/, '')}/api/blogs?populate=image&sort=date:desc`
   const res = await fetch(BLOG_URL);
 

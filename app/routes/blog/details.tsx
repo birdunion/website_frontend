@@ -7,7 +7,7 @@ import type { StrapiBlog, StrapiResponse, Post } from "~/types";
 export async function loader({ request, params }: Route.LoaderArgs) {
   const { slug } = params;
 
-  const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || 'https://website-backend-c20g.onrender.com';
+  const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || 'https://api.bird-union.org';
   const BLOG_URL = `${STRAPI_URL.replace(/\/$/, '')}/api/blogs?filters[slug][$eq]=${slug}&populate=image`;
   const res = await fetch(BLOG_URL);
 
