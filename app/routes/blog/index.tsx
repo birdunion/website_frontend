@@ -15,7 +15,8 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export async function loader({ request }: Route.LoaderArgs): Promise<{ posts: Post[] }> {
-  const res = await fetch(`${import.meta.env.VITE_STRAPI_URL}/blogs?populate=image&sort=date:desc`);
+  const STRAPI_URL = import.meta.env.VITE_STRAPI_URL;
+  const res = await fetch(`${STRAPI_URL}/blogs?populate=image&sort=date:desc`);
 
   if (!res.ok) throw new Error("Failed to fetch data");
 

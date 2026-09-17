@@ -7,7 +7,8 @@ import type { StrapiBlog, StrapiResponse, Post } from "~/types";
 export async function loader({ request, params }: Route.LoaderArgs) {
   const { slug } = params;
 
-  const res = await fetch(`${import.meta.env.VITE_STRAPI_URL}/blogs?filters[slug][$eq]=${slug}&populate=image`);
+  const STRAPI_URL = import.meta.env.VITE_STRAPI_URL;
+  const res = await fetch(`${STRAPI_URL}/blogs?filters[slug][$eq]=${slug}&populate=image`);
 
   if (!res.ok) throw new Error("Failed to fetch blog post");
 
